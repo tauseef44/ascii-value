@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ASCII to Alphabets</title>
+  <style>
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    input[type="text"] {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid gray;
+      margin: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      border-radius: 5px;
+      background-color: blue;
+      color: white;
+      cursor: pointer;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <label for="" >Please enter a number between 64 and 90 for ascii value </label>
+    <input type="text" id="inputNumber">
+    <button onclick="convert()">Convert</button>
+    <p id="output"></p>
+  </div>
+  <script>
+    const asci = {
+      chr: function(num) {
+        return String.fromCharCode(num);
+      }
+    };
+
+    function convert() {
+      let input = document.getElementById("inputNumber").value;
+      let output = document.getElementById("output");
+      if (input >= 65 && input <= 90) {
+        output.innerHTML = asci.chr(input);
+      } else {
+        output.innerHTML = "Please enter a number between 65 and 90.";
+      }
+    }
+  </script>
+</body>
+</html>
